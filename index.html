@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootsdivap@4.6.1/dist/css/bootsdivap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <link rel="stylesheet" href="css/calc.css" />
+    <title>Calculadora de Crédito</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <form name="form1">
+        <div class="img">
+          <img
+            src="img/logo_sebrae-01.png"
+            alt="logo_raio"
+            width="250"
+            height="120"
+          />
+        </div>
+        <div class="topo">
+          <h2>Calculadora de Crédito</h2>
+          <h1>Simulação de Empréstimo</h1>
+          <div>
+            <span class="textoPequeno"
+              >(Informe 3 valores e pressione o botão 'Calcular' para obter o
+              4º.)
+            </span>
+          </div>
+        </div>
+        <br />
+        <div>
+          <!-- xxxxxxxxxxxx VALOR DO EMPRESTIMO xxxxxxxxx -->
+          <div class="val_emp">
+            <label for="montante">
+              Valor do Empréstimo
+              <br />
+              <span style="font-size: 0.8em"
+                >(O Valor financiado do Empréstimo não inclui o valor da
+                entrada.)</span
+              ></label
+            >
+            <br />
+            <input
+              name="montante"
+              size="20"
+              tabindex="1"
+              title="Digite o Valor do Empréstimo"
+              id="montante"
+              value=""
+              type="text"
+            />
+          </div>
+          <br />
+
+          <!-- xxxxxxxxxxxxxxxxxx QTD PARCELAS xxxxxxxxx -->
+          <div class="parcelas">
+            <label for="meses">Quantidade de Parcelas Mensais</label>
+            <br />
+            <input
+              name="periodo"
+              id="meses"
+              size="20"
+              title="Digite o número de meses"
+              tabindex="2"
+              value=""
+              type="text"
+            />
+          </div>
+          <br />
+
+          <!-- xxxxxxxxxxxxxxxxx JUROS xxxxxxxxxxxxxxxxx -->
+          <div class="input-group input-group-lg">
+            <span style="font-size: 0.8em"
+              >Selecione o banco para obter o valor da taxa bancaria ou digite
+              manualmente.</span
+            ><br />
+            <select class="bancos" name="select" tabindex="3">
+              <option>Selecione o Banco</option>
+              <option value="3">BANCO DO BRASIL</option>
+              <option value="2,4">BANCO SANTANDER</option>
+              <option value="3,99">ITAÚ UNIBANCO</option>
+              <option value="3">BRADESCO</option>
+              <option value="3,3">CAIXA ECONÔMICA</option>
+            </select>
+          </div>
+          <br />
+
+          <div class="juros">
+            <label for="juros">Taxa de Juros Mensal</label>
+            <br />
+
+            <input
+              id="juros"
+              type="text"
+              min="0"
+              class="form-control payment-value"
+              title="Escolha a taxa de juros mensal"
+              value=""
+              placeholder="Ex.: 3 - 2,4 - 3,99"
+            />
+            <span class="input-group-text">%</span>
+          </div>
+        </div>
+        <br />
+
+        <!-- xxxxxxxxxxxxxxxxxx PRESTAÇÃO xxxxxxxxxxxx -->
+        <div class="prestacao">
+          <label for="prestacao">
+            Valor da Prestação
+            <br />
+            <span style="font-size: 0.8em"
+              >(Considera-se que a 1a. prestação não seja no ato.)</span
+            >
+            <br />
+          </label>
+
+          <input
+            name="parcela"
+            id="prestacao"
+            size="20"
+            tabindex="4"
+            title="Digite o valor da Prestação"
+            placeholder=""
+            value=""
+            type="text"
+          />
+        </div>
+        <br />
+
+        <!-- xxxxxxxxxxxxxxxxxxx BOTOES xxxxxxxxxxxxxxxx -->
+        <div class="botoes">
+          <button
+            class="btn btn-primary btn-md"
+            id="calcular"
+            name="Button"
+            type="button"
+            tabindex="5"
+            onClick="Calcular()"
+            onKeyPress="Calcular()"
+            value="Calcular"
+          >
+            Calcular
+          </button>
+
+          <button
+            class="btn btn-primary btn-md"
+            id="limparCampos"
+            value="Limpar"
+            onClick="Limpar()"
+            onKeyPress="Limpar()"
+            tabindex="6"
+            type="button"
+          >
+            Limpar Campos
+          </button>
+        </div>
+        <br />
+        <!--RODAPÉ-->
+        <p class="footer_raio">Raio Digital &copy; 2022 - Versão 1.0</p>
+      </form>
+    </div>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
